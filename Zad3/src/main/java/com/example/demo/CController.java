@@ -16,6 +16,15 @@ public class CController {
     @GetMapping
     public boolean getCalendarForYearAndMonth(@RequestParam(name = "year") String year,
                                               @RequestParam(name = "month") String month){
+        Integer ye = Integer.parseInt(year);
+        Integer mo = Integer.parseInt(month);
+        Website website = new Website("http://www.weeia.p.lodz.pl", ye, mo);
+        Calendar calendar = CalCalendar.getCalendar(website.getEvents(), website.getMonth(), website.getYear());
+        try {
+            CalCalendar.printCalendar(calendar);
+        } catch (IOException e) {
+            return false;
+        }
         return true;
     }
 
