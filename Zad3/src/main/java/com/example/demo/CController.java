@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/calendar")
-public class CalendarController {
+public class CController {
 
     @GetMapping
     public boolean getCalendarForYearAndMonth(@RequestParam(name = "year") String year,
