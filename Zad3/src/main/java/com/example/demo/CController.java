@@ -14,6 +14,7 @@ import java.io.IOException;
 public class CController {
 
     @GetMapping
+    @ResponseBody
     public boolean getCalendarForYearAndMonth(@RequestParam(name = "year") String year,
                                               @RequestParam(name = "month") String month){
         Integer ye = Integer.parseInt(year);

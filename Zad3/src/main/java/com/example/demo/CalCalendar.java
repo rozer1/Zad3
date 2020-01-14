@@ -25,11 +25,11 @@ public class CalCalendar {
         try {
             calendar = java.util.Calendar.getInstance();
             Cal.getProperties().add(CalScale.GREGORIAN);
-            Cal.getProperties().add(new ProdId("//Kalendarz-weeia/"));
+            Cal.getProperties().add(new ProdId("Kalendarz"));
             Cal.getProperties().add(Version.VERSION_2_0);
 
             date = new SimpleDateFormat("yyyyMM")
-                    .parse("2020" + month+1);
+                    .parse("2019" + month);
 
             calendar.setTime(date);
 
@@ -51,7 +51,8 @@ public class CalCalendar {
     }
 
     public static void printCalendar(net.fortuna.ical4j.model.Calendar calendar) throws IOException {
-        FileOutputStream fout = new FileOutputStream("myCalendar.ics");
+
+        FileOutputStream fout = new FileOutputStream("Calendar.ics");
         CalendarOutputter outputter = new CalendarOutputter();
         outputter.output(Cal, fout);
     }
